@@ -1,4 +1,4 @@
-package com.portfolio.Tin78;
+package com.PI.Tin78;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -8,13 +8,13 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.portfolio</groupId>
-	<artifactId>ProyectoIntegrador</artifactId>
+	<groupId>com.PI</groupId>
+	<artifactId>Tin78</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProyectoIntegrador</name>
-	<description>Tin78&apos;s AP Portfolio</description>
+	<name>Tin78</name>
+	<description>Proyecto Integrador de Argentina Programa by Tin78</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
