@@ -47,11 +47,3 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         
     }
 }
-
-
-// JwtTokenFilter.java TERMINADO
-
-// Para seguir ver
-// https://www.youtube.com/watch?v=q8i5pIoBfgI&list=PLly5egcQSlfmDzqF4Of944eD2VPXxua42&index=19
-// Argentina Programa - YoProgramo - Proyecto Final - Parte 15 (Login con JWT)
-// a partir de 1:20:13
