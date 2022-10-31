@@ -34,8 +34,9 @@ public class CExperiencia {
     
     @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
-        if(!sExperiencia.existsById(id))
+        if(!sExperiencia.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe una experiencia con este ID"), HttpStatus.NOT_FOUND);
+        }
         Experiencia experiencia = sExperiencia.getOne(id).get();
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
@@ -47,7 +48,7 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("El nombre no puede estar vacío"), HttpStatus.BAD_REQUEST);
         }
         if (sExperiencia.existsByNombreE(dtoexp.getNombreE())) {
-            return new ResponseEntity(new Mensaje("La experiencia ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ya existe una experiencia con ese nombre"), HttpStatus.BAD_REQUEST);
         }
         Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE());
         sExperiencia.save(experiencia);
@@ -64,7 +65,7 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("El nombre no puede estar vacío"), HttpStatus.BAD_REQUEST);
         }
         if (sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.getByNombreE(dtoexp.getNombreE()).get().getId() != id) {
-            return new ResponseEntity(new Mensaje("La experiencia ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ya existe una experiencia con ese nombre"), HttpStatus.BAD_REQUEST);
         }
 
         Experiencia experiencia = sExperiencia.getOne(id).get();
@@ -73,7 +74,6 @@ public class CExperiencia {
 
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia actualizada con éxito"), HttpStatus.OK);
-
     }
     
     //Borrar una experiencia
