@@ -33,8 +33,21 @@
     </div>
 
     <div>
-      <button type="button" class="btn btn-outline-light" (click)="login()">
-        Login
+      <button
+        type="button"
+        class="btn btn-outline-light"
+        (click)="login()"
+        *ngIf="!isLogged"
+      >
+        Iniciar sesión
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-light"
+        (click)="onLogOut()"
+        *ngIf="isLogged"
+      >
+        Cerrar sesión
       </button>
     </div>
 

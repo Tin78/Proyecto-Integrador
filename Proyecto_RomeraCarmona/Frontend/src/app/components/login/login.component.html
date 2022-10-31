@@ -12,14 +12,18 @@
               </p>
 
               <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                <!-- Saqué #f="ngForm" entre form y (ngSubmit)-->
                 <div class="form-outline form-white mb-4">
                   <input
                     type="email"
                     id="nombreUsuario"
                     name="nombreUsuario"
                     class="form-control form-control-lg"
+                    [(ngModel)]="nombreUsuario"
+                    name="nombreUsuario"
+                    required
                   />
-                  <label class="form-label" for="typeEmailX">Usuario</label>
+                  <label class="form-label" for="nombreUsuario">Usuario</label>
                 </div>
 
                 <div class="form-outline form-white mb-4">
@@ -27,8 +31,11 @@
                     type="password"
                     id="password"
                     class="form-control form-control-lg"
+                    [(ngModel)]="password"
+                    name="password"
+                    required
                   />
-                  <label class="form-label" for="typePasswordX">Password</label>
+                  <label class="form-label" for="password">Password</label>
                 </div>
 
                 <!-- <p class="small mb-5 pb-lg-2">
